@@ -109,9 +109,13 @@ class PageReplacement
                 {
                     frames.Remove(indexQueuePageTracker.Dequeue());
                 }
+                //This will add frame
                 frames.Add(page);
                 indexQueuePageTracker.Enqueue(page);
+                //Iterate the counter
                 faultsCounter++;
+
+                //Status
                 PrintStatus(indexQueuePageTracker.Count, "FIFO", frames,page,faultsCounter);
             }
         }
