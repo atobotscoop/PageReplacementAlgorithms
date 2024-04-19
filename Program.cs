@@ -109,12 +109,9 @@ class PageReplacement
                 {
                     frames.Remove(indexQueuePageTracker.Dequeue());
                 }
-                
                 frames.Add(page);
                 indexQueuePageTracker.Enqueue(page);
                 faultsCounter++;
-
-                
                 PrintStatus(indexQueuePageTracker.Count, "FIFO", frames,page,faultsCounter);
             }
         }
